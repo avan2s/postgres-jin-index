@@ -3,6 +3,11 @@ services:
   db:
     image: postgres:14-alpine
     restart: on-failure
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 4G
     environment:
       POSTGRES_DB: testdb
       POSTGRES_USER: postgres
